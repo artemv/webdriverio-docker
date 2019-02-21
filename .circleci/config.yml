@@ -13,4 +13,4 @@ jobs:
       - run:
           name: test
           command: |
-            docker exec testapp npm test
+            docker exec -ti testapp npm test
