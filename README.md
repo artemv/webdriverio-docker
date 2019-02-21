@@ -1,40 +1,15 @@
-## E2E using [Webdriver.io](https://github.com/webdriverio/webdriverio) and [selenium-standalone](https://github.com/vvo/selenium-standalone) in Docker
-> Sample of project running E2E tests with `wdio` and `selenium-standalone`
-each existing in separate Docker instances.
+## E2E using [Webdriver.io](https://github.com/webdriverio/webdriverio) and [selenium](https://github.com/elgalu/docker-selenium) in Docker
 
-See `selenium-standalone` Docker instance declaration
-[Ubuntu.dockerfile](https://github.com/serbanghita/selenium-standalone-docker/blob/master/Ubuntu.dockerfile).
+[![CircleCI](https://circleci.com/gh/artemv/webdriverio-docker.svg?style=svg)](https://circleci.com/gh/artemv/webdriverio-docker)
+[![Known Vulnerabilities](https://snyk.io/test/github/artemv/webdriverio-docker/badge.svg?targetFile=package.json)](https://snyk.io/test/github/artemv/webdriverio-docker?targetFile=package.json)
 
-**Run**
+Sample project running E2E tests in (non-headless) Chrome and Firefox with `wdio` and selenium nodes configured via 
+`docker-compose` with working CI config running on CircleCI docker executor type.
 
-1. `git clone git@github.com:serbanghita/webdriverio-docker.git`
-1. `cd my-wdio`
-1. `docker-compose up` (` -d --build --force-recreate`)
-1. `docker-compose ps`
+**Usage**
 
-                Name                 Command        State           Ports
-        --------------------------------------------------------------------------
-        my-wdio_seleniumapp_1   npm run selenium    Up      0.0.0.0:4444->4444/tcp
-        my-wdio_testapp_1       tail -f /dev/null   Up
-
-
-1. `docker exec my-wdio_testapp_1 npm run test` - You should see tests pass
-
-
-**Wiki**
-
-Using `docker` CLI command
-
-```
-docker network create --driver bridge testing-lan
-docker run -d -p 4444:4444 --net testing-lan --rm --name seleniumapp serbanghita/selenium-standalone
-docker build -t serbanghita/my-wdio .
-docker run -d --net testing-lan --rm --name myapp serbanghita/my-wdio
-docker exec myapp npm test
-```
-
-Using `docker-composer` CLI command
-
-* Start: `docker-compose up -d --build --force-recreate`
-* Stop: `docker-compose stop`
-* Reconfigure: `docker-compose down && docker-compose pull`
+1. `git clone git@github.com:artemv/webdriverio-docker.git`
+1. `cd webdriverio-docker`
+1. `docker-compose up -d (--build)`
+1. `docker exec selenium-hub wait_all_done 30s`
+1. `docker exec e2e-runner yarn test` - You should see tests pass

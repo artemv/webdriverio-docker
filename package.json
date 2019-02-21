@@ -1,22 +1,21 @@
 {
   "name": "my-wdio",
   "version": "1.0.0",
-  "description": "A sample Webdriver.io project for testing purposes.",
+  "description": "A working Webdriver.io boilerplate for CircleCI with docker executor type",
   "main": "index.js",
   "scripts": {
-    "selenium": "selenium-standalone install && selenium-standalone start",
     "test": "wdio wdio.conf.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/serbanghita/my-wdio.git"
+    "url": "git+https://github.com/artemv/webdriverio-docker.git"
   },
-  "author": "Serban Ghita",
+  "author": "Artem Vasiliev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/serbanghita/my-wdio/issues"
+    "url": "https://github.com/artemv/webdriverio-docker/issues"
   },
-  "homepage": "https://github.com/serbanghita/my-wdio#readme",
+  "homepage": "https://github.com/artemv/webdriverio-docker#readme",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
