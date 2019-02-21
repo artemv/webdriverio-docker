@@ -4,9 +4,7 @@ services:
 
   e2e-runner:
     container_name: e2e-runner
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
 
   selenium-hub:
     container_name: selenium-hub
