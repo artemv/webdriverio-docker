@@ -13,7 +13,7 @@ exports.config = {
     // according to your user and key information. However, if you are using a private Selenium
     // backend you should define the host address, port, and path here.
     //
-    host: "seleniumapp",
+    host: "selenium-hub",
     port: 4444,
     path: '/wd/hub',
 
@@ -61,10 +61,7 @@ exports.config = {
             // 5 instances get started at a time.
             maxInstances: 1,
             //
-            browserName: 'chrome',
-            chromeOptions: {
-                "args": [ "disable-extensions", "disable-gpu", "no-sandbox" ]
-            }
+            browserName: 'chrome'
         },
         {
             maxInstances: 1,
