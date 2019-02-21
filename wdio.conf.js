@@ -63,14 +63,13 @@ exports.config = {
             //
             browserName: 'chrome',
             chromeOptions: {
-                "args": [ "disable-extensions", "headless", "disable-gpu", "no-sandbox" ]
+                "args": [ "disable-extensions", "disable-gpu", "no-sandbox" ]
             }
         },
         {
             maxInstances: 1,
             browserName: 'firefox',
             "moz:firefoxOptions": {
-                args: [ "-headless" ],
                 prefs: {
                     // Prevent opening the extension tabs on startup
                     "extensions.enabledScopes": 0
