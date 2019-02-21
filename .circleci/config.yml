@@ -14,4 +14,4 @@ jobs:
           name: test
           command: |
             docker exec selenium-hub wait_all_done 30s
-            docker exec -ti testapp npm test
+            docker exec -ti e2e-runner yarn test

@@ -12,4 +12,4 @@ Sample project running E2E tests in (non-headless) Chrome and Firefox with `wdio
 1. `cd webdriverio-docker`
 1. `docker-compose up -d (--build)`
 1. `docker exec selenium-hub wait_all_done 30s`
-1. `docker exec e2e-runner yarn test` - You should see tests pass
+1. `docker exec -ti e2e-runner yarn test` - You should see tests pass
