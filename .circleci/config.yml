@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run:
+          name: pre-deps
+          command: |
+            npm install -g yarn
+      - run:
+          name: start dockers
+          command: |
+            docker-compose up -d
+      - run:
+          name: test
+          command: |
+            docker exec testapp npm test

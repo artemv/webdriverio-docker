@@ -3,19 +3,13 @@ version: "2"
 services:
 
   testapp:
+    container_name: testapp
     build:
       context: .
       dockerfile: Dockerfile
-    networks:
-      - testing-lan
 
   seleniumapp:
+    container_name: seleniumapp
     image: serbanghita/selenium-standalone:latest
     ports:
       - "4444:4444"
-    networks:
-      - testing-lan
-
-networks:
-  testing-lan:
-    driver: bridge
