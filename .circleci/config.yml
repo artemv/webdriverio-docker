@@ -6,10 +6,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: pre-deps
-          command: |
-            npm install -g yarn
-      - run:
           name: start dockers
           command: |
             docker-compose up -d
