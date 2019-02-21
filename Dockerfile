@@ -39,7 +39,6 @@ RUN apt-get -qqy --no-install-recommends install \
 
 
 RUN export DISPLAY=:99.0
-RUN Xvfb :99 -shmem -screen 0 1366x768x16 &
 
 WORKDIR /home/node
 ADD . .
@@ -54,5 +53,4 @@ RUN npm --version
 USER node
 RUN npm install
 
-ENTRYPOINT ["tail", "-f", "/dev/null"]
-
+ENTRYPOINT ["bash", "docker-entrypoint.sh"]
