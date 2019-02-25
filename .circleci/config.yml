@@ -14,4 +14,4 @@ jobs:
           name: test
           command: |
             time docker exec selenium-hub wait_all_done 30s
-            docker exec -ti e2e-runner yarn test
+            docker exec -e CADDY_SERVER=my-server -ti e2e-runner yarn test

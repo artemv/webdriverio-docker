@@ -71,3 +71,6 @@ services:
       - GRID=false
       - CHROME=false
       - FIREFOX=true
+
+  my-server:
+    image: abiosoft/caddy
