@@ -13,5 +13,5 @@ jobs:
       - run:
           name: test
           command: |
-            docker exec -ti e2e-runner time wget --retry-connrefused --no-check-certificate -T 30  http://localhost:4444 -O /dev/null
+            time docker exec -ti e2e-runner wget --retry-connrefused --no-check-certificate -T 30  http://selenium:4444 -O /dev/null
             docker exec -e CADDY_SERVER=my-server -ti e2e-runner yarn test
