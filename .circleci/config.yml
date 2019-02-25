@@ -13,5 +13,5 @@ jobs:
       - run:
           name: test
           command: |
-            time docker exec selenium-hub wait_all_done 30s
+            time wget --retry-connrefused --no-check-certificate -T 30  http://localhost:4444 -O /dev/null
             docker exec -e CADDY_SERVER=my-server -ti e2e-runner yarn test

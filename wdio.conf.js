@@ -13,7 +13,7 @@ exports.config = {
     // according to your user and key information. However, if you are using a private Selenium
     // backend you should define the host address, port, and path here.
     //
-    host: "selenium-hub",
+    host: "selenium",
     port: 4444,
     path: '/wd/hub',
 
@@ -62,16 +62,6 @@ exports.config = {
             maxInstances: 1,
             //
             browserName: 'chrome'
-        },
-        {
-            maxInstances: 1,
-            browserName: 'firefox',
-            "moz:firefoxOptions": {
-                prefs: {
-                    // Prevent opening the extension tabs on startup
-                    "extensions.enabledScopes": 0
-                }
-            }
         }
     ],
     //
